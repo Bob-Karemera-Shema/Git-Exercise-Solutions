@@ -737,3 +737,99 @@ remote: Resolving deltas: 100% (24/24), done.
 To https://github.com/Bob-Karemera-Shema/git-copy.git
  * [new branch]      main -> main
 ```
+
+### Exercise 2
+```bash
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ touch footer.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git add .
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git commit -m "added footer file"
+[ft/footer fc510a1] added footer file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 footer.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git add .
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git status
+On branch ft/footer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   footer.html
+
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git commit -m "added footer elements"
+[ft/footer c674627] added footer elements
+ 1 file changed, 5 insertions(+)
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git push -u origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 567 bytes | 283.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/footer
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/squashing)
+$ git merge --squash ft/footer
+Updating 14e40f1..c674627
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 footer.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/squashing)
+$ git add .
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 3ad080a] footer changes squashing
+ 1 file changed, 5 insertions(+)
+ create mode 100644 footer.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/squashing)
+$ git push -u origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 324 bytes | 324.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/squashing
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+```
