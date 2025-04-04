@@ -396,3 +396,180 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Bob-Karemera-Shema/git-playground.git
    98d9179..7c3bcd5  ft/service-redesign -> ft/service-redesign
 ```
+
+## Bundle 3
+
+### Exercise 1
+```bash
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/service-redesign)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ touch team.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git add .
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git commit -m 'added team page'
+[ft/team-page 6b4a25c] added team page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git push -u origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 454 bytes | 227.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/team-page
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git log
+commit 6b4a25cfe10fe11de5e3ff090a3fa75be2f661fd (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Bob Karemera Shema <bobshema14@gmail.com>
+Date:   Fri Apr 4 16:49:36 2025 +0200
+
+    added team page
+
+commit 7c3bcd591212cce719a960f961e86cedb7b847ed (origin/ft/service-redesign, ft/service-redesign)
+Merge: 98d9179 8efc32f
+Author: Bob Karemera Shema <bobshema14@gmail.com>
+Date:   Fri Apr 4 16:22:18 2025 +0200
+
+    Merge branch 'main' into ft/service-redesign
+
+commit 8efc32f46489daa761ea50256c5d8e1fbf464e4b (origin/main, origin/HEAD, main,
+ ft/contact-page)
+Author: Bob Karemera Shema <bobshema14@gmail.com>
+Date:   Fri Apr 4 16:19:09 2025 +0200
+
+    added old services
+
+commit 98d9179d122ea08cb62df4633ae2fcdc9d172144
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git cherry-pick 6b4a25cfe10fe11de5e3ff090a3fa75be2f661fd
+[ft/contact-page d8fbd50] added team page
+ Date: Fri Apr 4 16:49:36 2025 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ touch contact.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git add contact.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git commit -m "added contact page"
+[ft/contact-page fb36a9c] added contact page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git push -u orgin contact-page
+error: src refspec contact-page does not match any
+error: failed to push some refs to 'orgin'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git push -u origin contact-page
+error: src refspec contact-page does not match any
+error: failed to push some refs to 'https://github.com/Bob-Karemera-Shema/git-playground.git'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git push -u origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 722 bytes | 240.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/contact-page
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ touch faq.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git add faq.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git commit -m 'added faq page'
+[ft/faq-page 59a9c8b] added faq page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 faq.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git push -u origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 458 bytes | 229.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/faq-page
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git revert 6b4a25cfe10fe11de5e3ff090a3fa75be2f661fd
+[ft/faq-page 4f624f9] Revert "added team page"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 279 bytes | 139.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+   59a9c8b..4f624f9  ft/faq-page -> ft/faq-page
+```
