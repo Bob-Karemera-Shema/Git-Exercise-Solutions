@@ -692,3 +692,48 @@ To https://github.com/Bob-Karemera-Shema/git-playground.git
  * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
 branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
 ```
+
+## Bundle 4
+
+### Exercise 1
+```bash
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git remote add git-copy https://github.com/Bob-Karemera-Shema/git-copy.git    
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git remote
+git-copy
+origin
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git add home.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git commit -m 'added lorem ipsum
+> '
+[main 14e40f1] added lorem ipsum
+ 1 file changed, 1 insertion(+)
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git push origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 345 bytes | 345.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+   cf61629..14e40f1  main -> main
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git push git-copy
+Enumerating objects: 47, done.
+Counting objects: 100% (47/47), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (45/45), done.
+Writing objects: 100% (47/47), 7.76 KiB | 467.00 KiB/s, done.
+Total 47 (delta 24), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (24/24), done.
+To https://github.com/Bob-Karemera-Shema/git-copy.git
+ * [new branch]      main -> main
+```
