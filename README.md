@@ -573,3 +573,122 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/Bob-Karemera-Shema/git-playground.git
    59a9c8b..4f624f9  ft/faq-page -> ft/faq-page
 ```
+
+### Exercise 2
+```bash
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git chechout main
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git add home.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git commit -m "added welcome message on home page"
+[main 8cf2a94] added welcome message on home page
+ 1 file changed, 1 insertion(+)
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git push
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Bob-Karemera-Shema/git-playground.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.82 KiB | 74.00 KiB/s, done.
+From https://github.com/Bob-Karemera-Shema/git-playground
+   8efc32f..c79f5ee  main       -> origin/main
+Merge made by the 'ort' strategy.
+ contact.html  | 11 +++++++++++
+ faq.html      | 11 +++++++++++
+ services.html |  6 ++++++
+ 3 files changed, 28 insertions(+)
+ create mode 100644 contact.html
+ create mode 100644 faq.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 620 bytes | 310.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+   c79f5ee..68d8d61  main -> main
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git add home.html
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git commit -m 'changes to home page'
+[ft/home-page-redesign aea4b0d] changes to home page
+ 1 file changed, 1 insertion(+)
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git push -u ft/home-page-redesign
+fatal: 'ft/home-page-redesign' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+bobsh@LAPTOP-LCN44KK0 MINGW64 ~/Desktop/Studies/amalitech-training/git-learning/moon (ft/home-page-redesign)
+$ git push -u origin ft/home-page-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 351 bytes | 351.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting
+remote:      https://github.com/Bob-Karemera-Shema/git-playground/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/Bob-Karemera-Shema/git-playground.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+```
